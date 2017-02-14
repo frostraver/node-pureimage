@@ -5,7 +5,9 @@
 //2014-11-15  line count: 401, 399, 386, 369, 349,
 
 
-var opentype = require('opentype.js');
+'use strict'
+
+var opentype = require('../vendor/opentype.js');
 var fs = require('fs');
 var PNG = require('pngjs').PNG;
 var JPEG = require('jpeg-js');
@@ -599,7 +601,7 @@ function calcSortedIntersections(lines,y) {
 
 //Bresenham's from Rosetta Code
 // http://rosettacode.org/wiki/Bitmap/Bresenham's_line_algorithm#JavaScript
-drawLine = function(image, line, color) {
+var drawLine = function(image, line, color) {
     var x0 = Math.floor(line.start.x);
     var y0 = Math.floor(line.start.y);
     var x1 = Math.floor(line.end.x);
